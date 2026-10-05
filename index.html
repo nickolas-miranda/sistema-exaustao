@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Exaustão de Emergência</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <div>
+        <p class="eyebrow">MONITORAMENTO</p>
+        <h1>Sistema de Exaustão de Emergência</h1>
+        <p class="subtitle">Painel de controle</p>
+      </div>
+      <div id="systemStatus" class="status normal">SISTEMA NORMAL</div>
+    </header>
+
+    <section class="grid">
+      <div class="card">
+        <h2>Entradas do sistema</h2>
+
+        <div class="sensor">
+          <div>
+            <strong>Sensor de Fumaça</strong>
+            <span>A = 1 quando há fumaça</span>
+          </div>
+          <label class="switch">
+            <input type="checkbox" id="smoke">
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="sensor">
+          <div>
+            <strong>Sensor de Temperatura</strong>
+            <span>B = 1 quando há superaquecimento</span>
+          </div>
+          <label class="switch">
+            <input type="checkbox" id="temperature">
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="sensor">
+          <div>
+            <strong>Chave de Manutenção</strong>
+            <span>C = 1 quando o modo manual está ativo</span>
+          </div>
+          <label class="switch">
+            <input type="checkbox" id="maintenance">
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="card output-card">
+        <h2>Saídas</h2>
+
+        <div id="exhaustBox" class="output">
+          <div class="output-icon">↻</div>
+          <div>
+            <span>Exaustão</span>
+            <strong id="exhaustText">DESLIGADA</strong>
+          </div>
+        </div>
+
+        <div id="alarmBox" class="output">
+          <div class="output-icon">!</div>
+          <div>
+            <span>Alarme</span>
+            <strong id="alarmText">NORMAL</strong>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="card truth-card">
+      <h2>Estado atual</h2>
+      <div class="values">
+        <div><span>A</span><strong id="valueA">0</strong></div>
+        <div><span>B</span><strong id="valueB">0</strong></div>
+        <div><span>C</span><strong id="valueC">0</strong></div>
+        <div><span>S</span><strong id="valueS">0</strong></div>
+      </div>
+      <p id="message" class="message">Ambiente normal.</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
